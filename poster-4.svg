@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="900" height="1200" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="base" gradientTransform="rotate(110 0.5 0.5)">
+      <stop offset="0" stop-color="#7d5638" />
+      <stop offset="0.58" stop-color="#4f3220" />
+      <stop offset="1" stop-color="#241309" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0.51" cy="0.21" r="0.78">
+      <stop offset="0" stop-color="#f8f4ec" stop-opacity="0.5" />
+      <stop offset="0.45" stop-color="#efe6d8" stop-opacity="0.16" />
+      <stop offset="1" stop-color="#efe6d8" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.62" r="0.78">
+      <stop offset="0.45" stop-color="#3b2416" stop-opacity="0" />
+      <stop offset="1" stop-color="#3b2416" stop-opacity="0.62" />
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="54" /></filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer><feFuncA type="linear" slope="0.5" /></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="900" height="1200" fill="url(#base)" />
+  <rect width="900" height="1200" fill="url(#glow)" />
+  <g filter="url(#blur)" opacity="0.55">
+        <ellipse cx="450" cy="552" rx="153" ry="240" fill="#241309" />
+        <ellipse cx="450" cy="1032" rx="306" ry="288" fill="#241309" />
+      </g>
+  <g fill="none" stroke="#efe6d8" stroke-opacity="0.09" stroke-width="1.4"><path d="M-90 205 C 198 114, 495 296, 990 150" /><path d="M-90 332 C 198 196, 495 467, 990 250" /><path d="M-90 520 C 198 407, 495 633, 990 453" /><path d="M-90 659 C 198 565, 495 753, 990 602" /><path d="M-90 800 C 198 668, 495 932, 990 721" /><path d="M-90 973 C 198 893, 495 1053, 990 925" /></g>
+  <rect width="900" height="1200" fill="url(#vignette)" />
+  <rect width="900" height="1200" filter="url(#grain)" opacity="0.13" style="mix-blend-mode:overlay" />
+</svg>

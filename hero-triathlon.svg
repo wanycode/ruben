@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="base" gradientTransform="rotate(122 0.5 0.5)">
+      <stop offset="0" stop-color="#6b5c4d" />
+      <stop offset="0.58" stop-color="#3f3227" />
+      <stop offset="1" stop-color="#1a110a" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0.34" cy="0.28" r="0.78">
+      <stop offset="0" stop-color="#f8f4ec" stop-opacity="0.5" />
+      <stop offset="0.45" stop-color="#efe6d8" stop-opacity="0.16" />
+      <stop offset="1" stop-color="#efe6d8" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="vignette" cx="0.5" cy="0.62" r="0.78">
+      <stop offset="0.45" stop-color="#3b2416" stop-opacity="0" />
+      <stop offset="1" stop-color="#3b2416" stop-opacity="0.62" />
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="96" /></filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer><feFuncA type="linear" slope="0.5" /></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#base)" />
+  <rect width="1600" height="1000" fill="url(#glow)" />
+  
+  <g fill="none" stroke="#efe6d8" stroke-opacity="0.09" stroke-width="1.4"><path d="M-160 165 C 352 63, 880 267, 1760 103" /><path d="M-160 288 C 352 192, 880 385, 1760 230" /><path d="M-160 410 C 352 352, 880 468, 1760 375" /><path d="M-160 566 C 352 483, 880 649, 1760 517" /><path d="M-160 689 C 352 586, 880 792, 1760 627" /><path d="M-160 822 C 352 722, 880 922, 1760 762" /></g>
+  <rect width="1600" height="1000" fill="url(#vignette)" />
+  <rect width="1600" height="1000" filter="url(#grain)" opacity="0.13" style="mix-blend-mode:overlay" />
+</svg>

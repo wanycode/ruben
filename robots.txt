@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /intake.html
+Disallow: /intake-bedankt.html
+
+Sitemap: https://runningwithwolves.nl/sitemap.xml
